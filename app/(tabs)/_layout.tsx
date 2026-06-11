@@ -15,19 +15,48 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
         tabBarButton: HapticTab,
+        tabBarStyle: {
+          borderTopWidth: 1,
+          borderTopColor: colorScheme === 'dark' ? '#1E293B' : '#E5E7EB',
+          // height: Platform.OS === 'ios' ? (60 + insets.bottom) : (56 + insets.bottom),
+          // paddingBottom: insets.bottom > 0 ? insets.bottom : 8,
+          paddingTop: 8,
+          backgroundColor: colorScheme === 'dark' ? '#151718' : '#ffffff',
+        }
       }}>
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'Product',
+          tabBarIcon: ({ color }) => <IconSymbol size={26} name="bag.fill" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="menu2"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Menu 2',
+          tabBarIcon: ({ color }) => <IconSymbol size={26} name="grid.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="add-product"
+        options={{
+          title: 'Add Product',
+          tabBarIcon: ({ color }) => <IconSymbol size={26} name="plus.circle.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="menu4"
+        options={{
+          title: 'Menu 4',
+          tabBarIcon: ({ color }) => <IconSymbol size={26} name="ellipsis.circle.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color }) => <IconSymbol size={26} name="person.fill" color={color} />,
         }}
       />
     </Tabs>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, ActivityIndicator, ActivityIndicatorProps } from 'react-native';
+import { StyleSheet, View, ActivityIndicator, ActivityIndicatorProps, ViewStyle, StyleProp } from 'react-native';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 
 interface LoadingIndicatorProps {
@@ -7,6 +7,7 @@ interface LoadingIndicatorProps {
   color?: string;
   fullscreen?: boolean;
   backgroundColor?: string;
+  style?: StyleProp<ViewStyle>;
 }
 
 export function LoadingIndicator({
@@ -14,6 +15,7 @@ export function LoadingIndicator({
   color,
   fullscreen = true,
   backgroundColor,
+  style,
 }: LoadingIndicatorProps) {
   const colorScheme = useColorScheme();
   const isDark = colorScheme === 'dark';
@@ -30,6 +32,7 @@ export function LoadingIndicator({
         styles.container,
         fullscreen ? styles.fullscreen : styles.inline,
         { backgroundColor: finalBgColor },
+        style,
       ]}
     >
       <ActivityIndicator size={size} color={finalColor} />
