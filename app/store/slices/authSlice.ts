@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import * as SecureStore from 'expo-secure-store';
+// import * as SecureStore from 'expo-secure-store';
+import * as SecureStore from '../../utils/secureStoreHelper';
 import { apiRequest } from "@/app/utils/apiHelper";
 import { Endpoint } from "@/app/utils/const";
 
