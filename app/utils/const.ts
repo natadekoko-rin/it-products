@@ -4,9 +4,4 @@ export class Endpoint{
 
   static readonly SEARCH_PRODUCTS = "/products/search?q="
   static readonly BASE_PRODUCTS = "/products"
-  
-
-
-
-
 }
