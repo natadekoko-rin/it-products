@@ -2,9 +2,6 @@ import { apiRequest } from "@/app/utils/apiHelper";
 import { Endpoint } from "@/app/utils/const";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-
-
-
 const mappingApiProduct = (apiProduct: any): Product => ({
   id: apiProduct.id.toString(),
   title: apiProduct.title,
@@ -24,7 +21,6 @@ const mappingApiProduct = (apiProduct: any): Product => ({
   shippingInformation: apiProduct.shippingInformation,
   returnPolicy: apiProduct.returnPolicy,
 });
-
 
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async (_, { rejectWithValue }) => {
   try {
@@ -106,7 +102,7 @@ export interface Product {
   price: number;
   description: string;
   category: string;
-  image: string; // compatibility with our listing UI (maps to thumbnail or image[0])
+  image: string;
   images: string[];
   thumbnail: string;
   brand?: string;

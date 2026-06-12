@@ -1,11 +1,7 @@
 import { Image } from 'expo-image';
-import { Dimensions, FlatList, Platform, StatusBar, StyleSheet, TextInput, TouchableOpacity, useColorScheme } from 'react-native';
+import { Dimensions, FlatList, StatusBar, StyleSheet, TextInput, TouchableOpacity, useColorScheme } from 'react-native';
 
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link, useRouter } from 'expo-router';
+import { useRouter } from 'expo-router';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { useEffect, useState } from 'react';
 import { fetchProducts, searchProducts } from '../store/slices/productSlice';
@@ -27,6 +23,7 @@ export default function HomeScreen() {
 
   const [searchQuery, setSearchQuery] = useState('');
   const { products, isLoading, error } = useAppSelector((state) => state.product);
+
   //first mount
   useEffect(() => {
     dispatch(fetchProducts());

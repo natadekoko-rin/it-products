@@ -1,5 +1,5 @@
 import MText from "@/components/common/text";
-import { Alert, StatusBar, TouchableOpacity, useColorScheme, View, StyleSheet } from "react-native";
+import { Alert, StatusBar, TouchableOpacity, useColorScheme, StyleSheet } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { clearAuth, logout } from "../store/slices/authSlice";
@@ -67,7 +67,6 @@ export default function ProfileScreen() {
           <MGap size={16} />
 
           {user?.gender && (
-            // <MCard style={{ padding: 0, borderRadius: 0 }}>
             <MCard style={[styles.detailRow, { padding: 0, borderRadius: 0 }]}>
               <MaterialIcons name="face" size={20} color={themeText} style={{ marginRight: 16 }} />
               <MCard style={{ padding: 0, borderRadius: 0 }}>
@@ -76,7 +75,6 @@ export default function ProfileScreen() {
                 <MText text={user.gender} size={15} weight="600" color={themeText} style={{ textTransform: 'capitalize' }} />
               </MCard>
             </MCard>
-            // </MCard>
           )}
         </MCard>
         <MGap size={24} />

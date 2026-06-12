@@ -1,6 +1,5 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-
 import { HapticTab } from '@/components/haptic-tab';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Colors } from '@/constants/theme';
@@ -18,8 +17,6 @@ export default function TabLayout() {
         tabBarStyle: {
           borderTopWidth: 1,
           borderTopColor: colorScheme === 'dark' ? '#1E293B' : '#E5E7EB',
-          // height: Platform.OS === 'ios' ? (60 + insets.bottom) : (56 + insets.bottom),
-          // paddingBottom: insets.bottom > 0 ? insets.bottom : 8,
           paddingTop: 8,
           backgroundColor: colorScheme === 'dark' ? '#151718' : '#ffffff',
         }

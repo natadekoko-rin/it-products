@@ -1,7 +1,7 @@
 import MText from "@/components/common/text";
 import { useEffect, useState } from "react";
 import {
-  Alert, KeyboardAvoidingView, Platform, ScrollView, StatusBar, TextInput, TouchableOpacity, useColorScheme, StyleSheet, View,
+  Alert, KeyboardAvoidingView, Platform, ScrollView, TextInput, TouchableOpacity, useColorScheme, StyleSheet, View,
 } from "react-native";
 import { Image } from 'expo-image';
 
@@ -32,7 +32,6 @@ export default function AddProductScreen() {
 
 
   const [title, setTitle] = useState('');
-  // const { isLoading } = useAppSelector((state) => state);
   const { isLoading } = useAppSelector((state) => state.product);
   const [price, setPrice] = useState('');
   const [category, setCategory] = useState('');
